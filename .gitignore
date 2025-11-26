@@ -1,3 +1,4 @@
+# .gitignore
 # Python
 __pycache__/
 *.py[cod]
@@ -21,14 +22,16 @@ wheels/
 *.egg
 MANIFEST
 
-# Jupyter Notebook
+# Jupyter
 .ipynb_checkpoints
+*.ipynb
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
 # Environment
 .env
@@ -39,10 +42,27 @@ ENV/
 env.bak/
 venv.bak/
 
-# Data
+# Data (manter estrutura mas não dados grandes)
 data/raw/*.csv
 data/processed/*.csv
+data/external/*.csv
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/external/.gitkeep
 
+# Models (não versionar modelos treinados)
+models/*.pkl
+models/*.joblib
+models/*.h5
+!models/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
